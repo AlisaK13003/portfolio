@@ -1,14 +1,13 @@
-* { /* * : universal selector; applies to all elements; see #1 */
+* {
+  /* * : universal selector; applies to all elements; see #1 */
 
   margin: 0; /* creates space outside the element */
   padding: 0; /* space between element content and its border */
   box-sizing: border-box; /* sets how element's size (width/height) is calculated */
   list-style: none; /* sets bulet point styles; see #2 */
-
 }
 
 :root {
-
   --color-primary: #191d2b;
   --color-secondary: #27ae60;
   --color-white: #ffffff;
@@ -21,51 +20,73 @@
   --color-grey5: #2a2e35;
   --color-grey6: #12181b;
   --br-sm-2: 14px;
-
 }
 
 body {
-
-  background-color: var(--color-primary); /* sets the background color of body */
+  background-color: var(
+    --color-primary
+  ); /* sets the background color of body */
   font-family: "Poppins", sans-serif; /* sets font for every element in body */
   font-size: 1.1rem; /* sets defualt font size for every element in body */
-  color: var(--color-white); /* sets default font color for every element in body */
+  color: var(
+    --color-white
+  ); /* sets default font color for every element in body */
   transition: all 0.4 ease-in-out; /* adds transitions to every element in body */
-
 }
 
 a {
-
   display: inline-block; /* determines how an element is displayed. see #3 */
   text-decoration: none; /* adds decorative lines to text */
   color: inherit; /* inherits color value from its parent */
   font-family: inherit; /* inherits font value from its parent */
-
 }
 
 header {
-
-  height: 100vh;
-  color: var(--color-white);
-  overflow: hidden;
-
+  height: 100vh; /* 100% of a device vertical height */
+  color: var(--color-white); /* sets text color to white */
+  overflow: hidden; /* hides any text that goes past the page (no scroll bar) */
 }
 
 section {
-
   min-height: 100vh;
   width: 100vw;
   position: absolute;
   left: 0;
   top: 0;
   padding: 3rem 18rem;
-
 }
 
 .section {
+  transform: translateY(
+    -100%
+  ); /* hides the section (later transitions into the page) */
+  transition: all 0.4 ease-in-out;
+  background-color: var(--color-primary);
+}
 
-  transform: translateY(-100%);
+.sec1 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
 
+.sec2 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec3 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec4 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec5 {
+  display: none;
+  transform: translateY(0) scale(1);
 }
 
 /*
