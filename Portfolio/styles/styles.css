@@ -19,7 +19,8 @@
   --color-grey5: #2a2e35;
   --color-grey6: #12181b;
   --br-sm-2: 14px;
-  --box-shadow0: 0px 3px 15px rgba(0,0,0,0.2);
+  --box-shadow0: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  --transition0: all 0.4 ease-in-out;
 }
 
 body {
@@ -27,7 +28,7 @@ body {
   font-family: "Poppins", sans-serif; /* sets font for every element in body */
   font-size: 1.1rem; /* sets defualt font size for every element in body */
   color: var(--color-white); /* sets default font color for every element in body */
-  transition: all 0.4 ease-in-out; /* adds transitions to every element in body */
+  transition: var(--transition0); /* adds transitions to every element in body */
 }
 
 a {
@@ -54,7 +55,7 @@ section {
 
 .section {
   transform: translateY(-100%); /* hides the section (later transitions into the page) */
-  transition: all 0.4 ease-in-out;
+  transition: var(--transition0);
   background-color: var(--color-primary);
 }
 
@@ -94,6 +95,13 @@ section {
   justify-content: center;
   transform: translateY(-50%);
 }
+.controls .active-btn {
+  background-color: var(--color-secondary) !important;
+  transition: var(--transition0);
+}
+.controls .active-btn i {
+  color: var(--color-white) !important;
+}
 .controls .control {
   padding: 1rem;
   cursor: pointer;
@@ -105,7 +113,10 @@ section {
   justify-content: center;
   align-items: center;
   margin: 1rem 0rem;
-  box-shadow: var(--box-shadow0);
+  box-shadow: var(--box-shadow0) i;
+  box-shadow-font-size: 1.2rem;
+  box-shadow-color: var(--color-grey2);
+  box-shadow-pointer-events: none;
 }
 
 /*
