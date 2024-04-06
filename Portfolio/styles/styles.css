@@ -1,4 +1,5 @@
-* { /* * : universal selector; applies to all elements; see #1 */
+* {
+  /* * : universal selector; applies to all elements; see #1 */
   margin: 0; /* creates space outside the element */
   padding: 0; /* space between element content and its border */
   box-sizing: border-box; /* sets how element's size (width/height) is calculated */
@@ -18,6 +19,7 @@
   --color-grey5: #2a2e35;
   --color-grey6: #12181b;
   --br-sm-2: 14px;
+  --box-shadow0: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 body {
@@ -36,18 +38,74 @@ a {
 }
 
 header {
-  height: 100vh;
-  color: var(--color-white);
-  overflow: hidden;
+  height: 100vh; /* 100% of a device vertical height */
+  color: var(--color-white); /* sets text color to white */
+  overflow: hidden; /* hides any text that goes past the page (no scroll bar) */
 }
 
 section {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 0;
   padding: 3rem 18rem;
+}
+
+.section {
+  transform: translateY(-100%); /* hides the section (later transitions into the page) */
+  transition: all 0.4 ease-in-out;
+  background-color: var(--color-primary);
+}
+
+.sec1 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec2 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec3 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec4 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.sec5 {
+  display: none;
+  transform: translateY(0) scale(1);
+}
+
+.controls {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+.controls .control {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--color-grey4);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+  box-shadow: var(--box-shadow0);
 }
 
 /*
