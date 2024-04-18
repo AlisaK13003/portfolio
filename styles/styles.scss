@@ -9,7 +9,7 @@
 
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #27ae60;
+  --color-secondary: #fff6a6;
   --color-white: #ffffff;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -86,7 +86,6 @@ section {
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
-  background-color: #27ae60;
 }
 
 .sec5 {
@@ -99,10 +98,10 @@ section {
   animation: scaleAnim 1s ease-in-out;
   @keyframes scaleAnim {
     0%{
-      transform: translateY(-100%) scale(0)
+      transform: translateY(-100%) scaleY(0)
     }
     100%{
-      transform: translateY(0) scale(1)
+      transform: translateY(0) scaleY(1)
     }
   }
 }
@@ -136,6 +135,8 @@ section {
     justify-content: center;
     align-items: center;
     margin: 1rem 0rem;
+    stroke-width: 5px;
+    stroke: #000;
     box-shadow: var(--box-shadow0) i {
       font-size: 1.2rem;
       color: var(--color-grey2);
@@ -144,8 +145,49 @@ section {
   }
 }
 
+.header-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  .left-header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    .h-shape {
+      transition: var(--transition0);
+      width: 65%;
+      height: 100%;
+      background-color: var(--color-secondary);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%)/* see #3 */
+    }
+    .image {
+      border-radius: var(--br-sm-2);
+      height: 90%;
+      width: 68%;
+      margin-left: 4rem;
+      background-color: var(--color-black);
+      transition: var(--transition0);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition0);
+        filter: grayscale(100%);
+        &:hover{
+          filter: grayscale(0%);
+        }
+      }
+    }
+  }
+}
+
 /*
 Footnotes
 1. https://www.w3schools.com/cssref/css_selectors.php
 2. https://developer.mozilla.org/en-US/docs/Web/CSS/list-style
+3. https://bennettfeely.com/clippy/
 */
