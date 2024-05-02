@@ -23,6 +23,20 @@
   --transition0: all 0.4s ease-in-out;
 }
 
+.light-mode {
+  --color-primary: #ffffff;
+  --color-secondary: #cc748e;
+  --color-white: #454e56;
+  --color-black: #000;
+  --color-grey0: #f8f8f8;
+  --color-grey1: #6c7983;
+  --color-grey2: #6c7983;
+  --color-grey3: #6c7983;
+  --color-grey4: #454e56;
+  --color-grey5: #f8f8f8;
+  --color-grey6: #12181b;
+}
+
 body {
   background-color: var(--color-primary); /* sets the background color of body */
   font-family: "Poppins", sans-serif; /* sets font for every element in body */
@@ -113,8 +127,8 @@ section {
   transition: var(--transition0);
 }
 .controls .active-btn i {
-  color: var(--color-white) !important;
-  text-shadow: 0 0 3px black;
+  color: var(--color-white);
+  text-shadow: 1px 0px 5px var(--color-primary);
 }
 .controls .control {
   padding: 1rem;
@@ -128,11 +142,34 @@ section {
   align-items: center;
   margin: 1rem 0rem;
   stroke-width: 5px;
-  stroke: #000;
   box-shadow: var(--box-shadow0) i;
   box-shadow-font-size: 1.2rem;
   box-shadow-color: var(--color-grey2);
   box-shadow-pointer-events: none;
+}
+
+.theme-btn {
+  top: 5%;
+  right: 3%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-grey4);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition0);
+}
+.theme-btn:active {
+  transform: translateY(-5px);
+}
+.theme-btn i {
+  font-size: 1.4rem;
+  color: var(--color-grey2);
+  pointer-events: none;
 }
 
 .header-content {
@@ -155,7 +192,7 @@ section {
   top: 0;
   z-index: -1;
   -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
-          clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+          clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%); /* see #3 */
 }
 .header-content .left-header .image {
   border-radius: var(--br-sm-2);
@@ -577,7 +614,8 @@ section {
 .contact-content-con .right-contact .input-control {
   margin: 1.5rem 0;
 }
-.contact-content-con .right-contact .input-control input, .contact-content-con .right-contact .input-control textarea {
+.contact-content-con .right-contact .input-control input,
+.contact-content-con .right-contact .input-control textarea {
   border-radius: 30px;
   font-weight: inherit;
   font-size: inherit;
