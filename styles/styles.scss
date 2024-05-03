@@ -130,15 +130,6 @@ section {
   align-items: center;
   justify-content: center;
   transform: translateY(-50%);
-  .active-btn {
-    background-color: var(--color-secondary) !important;
-    transition: var(--transition0);
-    i {
-      color: var(--color-white);
-      text-shadow: 1px 0px 5px var(--color-primary);
-    }
-  }
-
   .control {
     padding: 1rem;
     cursor: pointer;
@@ -149,15 +140,25 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0rem;
-    stroke-width: 5px;
-    box-shadow: var(--box-shadow0) i {
+    margin: .7rem 0;
+    box-shadow: var(--box-shadow0);
+    i {
       font-size: 1.2rem;
       color: var(--color-grey2);
       pointer-events: none;
     }
   }
+  .active-btn {
+    background-color: var(--color-secondary) !important;
+    transition: var(--transition0);
+    i {
+      color: var(--color-white);
+      text-shadow: 1px 0px 5px var(--color-primary);
+    }
+  }
 }
+
+
 
 .theme-btn {
   top: 5%;
