@@ -3,7 +3,7 @@
   margin: 0; /* creates space outside the element */
   padding: 0; /* space between element content and its border */
   box-sizing: border-box; /* sets how element's size (width/height) is calculated */
-  list-style: none; /* sets bulet point styles; see #2 */
+  list-style: none; /* sets bullet point styles; see #2 */
 }
 
 :root {
@@ -53,9 +53,15 @@ a {
 }
 
 header {
-  height: 100vh; /* 100% of a device vertical height */
+  min-height: 100vh; /* 100% of a device vertical height */
+  font-family: "Poppins", sans-serif;
   color: var(--color-white); /* sets text color to white */
   overflow: hidden; /* hides any text that goes past the page (no scroll bar) */
+}
+@media screen and (max-width: 610px) {
+  header {
+    min-height: 100vh;
+  }
 }
 
 section {
@@ -708,6 +714,66 @@ section {
   font-size: 6.3rem;
 }
 
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0;
+  }
+  header .right-header {
+    padding: 2rem !important;
+  }
+  .theme-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .header-content {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+  .left-header .h-shape {
+    display: none;
+  }
+  .right-header {
+    grid-row: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .right-header .name {
+    font-size: 2.5rem !important;
+  }
+  .header-content .left-header .image {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  .about-container .right-about {
+    grid-template-columns: 1fr;
+    padding-top: 2.5rem;
+  }
+  .about-container .left.about {
+    padding-right: 0;
+  }
+  .about-container .left.about p {
+    padding-left: 0;
+  }
+  .section {
+    padding: 2rem 2.5rem;
+  }
+  .controls {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey5);
+  }
+  .controls .control {
+    margin: 1rem 0.3rem;
+  }
+}
 /*
 Footnotes
 1. https://www.w3schools.com/cssref/css_selectors.php

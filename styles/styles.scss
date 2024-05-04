@@ -1,10 +1,11 @@
+
 * {
   /* * : universal selector; applies to all elements; see #1 */
 
   margin: 0; /* creates space outside the element */
   padding: 0; /* space between element content and its border */
   box-sizing: border-box; /* sets how element's size (width/height) is calculated */
-  list-style: none; /* sets bulet point styles; see #2 */
+  list-style: none; /* sets bullet point styles; see #2 */
 }
 
 :root {
@@ -60,9 +61,13 @@ a {
 }
 
 header {
-  height: 100vh; /* 100% of a device vertical height */
+  min-height: 100vh; /* 100% of a device vertical height */
+  font-family: 'Poppins', sans-serif;
   color: var(--color-white); /* sets text color to white */
   overflow: hidden; /* hides any text that goes past the page (no scroll bar) */
+  @media screen and (max-width:610px) {
+    min-height: 100vh;
+  }
 }
 
 section {
@@ -723,6 +728,9 @@ section {
     }
   }
 }
+
+@import './media';
+
 
 /*
 Footnotes
